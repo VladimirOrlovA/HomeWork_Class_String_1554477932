@@ -22,9 +22,12 @@ void main() {
 	s.print();
 	s.append(" forever!");
 	s.print();
-	s.clear();*/
+	s.clear();
+	s.~string_();*/
 
-	//s.~string_();
+	// проверка функции append //
+
+	
 	//s.setString("itstep");
 	//cout << s.equal("Itstep");
 
