@@ -8,22 +8,22 @@ string_::string_()
 	length = 0;
 }
 
-string_::string_(const char * s)
+string_::string_(const char *s)
 {
 	length = strlen(s);
 	str = new char[length + 1];
 	strcpy_s(str, length + 1, s);
 }
 
-void string_::setString(const char * s)
+void string_::setString(const char *s)
 {
-	if (str != nullptr) delete[] str;
-	length = strlen(s);
-	str = new char[length + 1];
-	strcpy_s(str, length + 1, s);
+	if (str != nullptr) delete[] str;	// если строка не пустая удаляем строку (массив)
+	length = strlen(s);					// получаем длину переданной строки
+	str = new char[length + 1];			// выделяем под указатель строки получатель длину строки источника
+	strcpy_s(str, length + 1, s);		// устанавливаем в строку назначения длину переданной строки +1 символ для /0 и саму строку источник
 }
 
-const char * string_::getString()
+const char *string_::getString()
 {
 	return str;
 }
@@ -33,18 +33,19 @@ int string_::getLength()
 	return length;
 }
 
-void string_::append(const char * s)
+void string_::append(const char *s)
 {
 	if (str == nullptr) {
 		setString(s);
 		return;
 	}
-	length += strlen(s);
-	char* tmp = new char[length + 1];
-	strcpy_s(tmp, length + 1, str);
-	strcat_s(tmp, length + 1, s);
+	length += strlen(s);				// прибавляем к текущей длине строки длину строки источника
+	char* tmp = new char[length + 1];	// объявляем указатель для временной строки
+	strcpy_s(tmp, length + 1, str);		// во временную строку передаем строку str
+	strcat_s(tmp, length + 1, s);		// во временную строку передаем строку источник s
 	delete[]str;
 	str = tmp;
+	//delete[] tmp;
 
 }
 

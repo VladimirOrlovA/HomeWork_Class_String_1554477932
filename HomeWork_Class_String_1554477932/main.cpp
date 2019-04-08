@@ -13,21 +13,25 @@ string_ getN() {
 }
 
 void main() {
-	//string_ s("Hello");
-	//s.print();
-	//s.setString("Hollywood");
-	//s.print();
-	//s.append(" undead");
-	//s.print();
-	////s.clear();
+	
+	string_ s("Hello");
+	
+	// проверка функции append //
+	/*s.print();
+	s.setString("Hollywood");
+	s.print();
+	s.append(" forever!");
+	s.print();
+	s.clear();*/
+
 	//s.~string_();
 	//s.setString("itstep");
 	//cout << s.equal("Itstep");
 
-	string_ s("Hello");
+	//string_ s("Hello");
 	//инициализация при создании
 	//string_ s2 = s;
-	string_ s2 = "adadasdasd";
+	//string_ s2 = "adadasdasd";
 	////передача объекта в функцию по значению
 	//f(s);
 	////возврат объекта из функции по значению
